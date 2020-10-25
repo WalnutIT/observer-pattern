@@ -23,23 +23,22 @@ import com.walnutit.observerpattern.utils.Timer;
  *
  */
 public class ID4Testing implements TestDeparture {
-	
+
 	public final static int TEST_DEPARTURE_KEY = 1;
 
 	@Override
 	public ElectroCar update(ElectroCar electroCar) {
 		System.out.println(
 				"TestingDeparture received electro car with configuration id: "
-						+ electroCar.getEcltraFeatures().getConfigurationId());
+						+ electroCar.getElectroCarFeatures()
+								.getConfigurationId());
 		Timer.sleep(2);
 		System.out.println("... starting testing");
 		Timer.sleep(7);
 		System.out.println("... testing was successful");
-		electroCar.getEcltraFeatures().setTested(true);
+		electroCar.getElectroCarFeatures().setTested(true);
 		return electroCar;
-		
+
 	}
-
-
 
 }

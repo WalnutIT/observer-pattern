@@ -45,9 +45,7 @@ public class Client implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		
-		
-		
+
 		System.out.println("\n\n");
 		System.out.println("\n\n");
 
@@ -56,38 +54,35 @@ public class Client implements CommandLineRunner {
 						BatteryCapacity.kWh77, Rim.model2,
 						ExtraEquipment.package3);
 		FactoryZwickau factoryZwickau = new ID3Factory(
-				ID3Version1.getID3Version1(carFeatures));
-		
+				new ID3Version1(carFeatures));
+
 		factoryZwickau.addTestDeparture(1, new ID3Testing());
 		factoryZwickau.addTestDeparture(2, new ID4Testing());
-		
+
 		System.out.println("\n\n");
 		System.out.println(
 				"Building VW ID3 Version 1 with configuration id: "
 						+ carFeatures.getConfigurationId());
 		System.out.println("\n");
 		ElectroCar electroCar = factoryZwickau.buildElectroCar();
-		System.out
-				.println("Electro Car with configuration ID"
-						+ electroCar.getEcltraFeatures()
-								.getConfigurationId()
-						+ " is tested: "
-						+ electroCar.getEcltraFeatures().isTested());
+		System.out.println("Electro Car with configuration ID"
+				+ electroCar.getElectroCarFeatures()
+						.getConfigurationId()
+				+ " is tested: "
+				+ electroCar.getElectroCarFeatures().isTested());
 
 		Timer.sleep(5);
 		System.out.println("\n\n");
 		carFeatures = null;
 		electroCar = null;
 		factoryZwickau = null;
-		
 
 		carFeatures = ElectroCarFeaturesID3Version2
 				.getElectroCarFEaturesID3Version2(Engine.engine1,
 						Color.black, BatteryCapacity.kWh58,
 						Rim.model3, ExtraEquipment.package1);
-		factoryZwickau = new ID3Factory(
-				ID3Version2.getID3Version2(carFeatures));
-		
+		factoryZwickau = new ID3Factory(new ID3Version2(carFeatures));
+
 		factoryZwickau.addTestDeparture(1, new ID3Testing());
 		factoryZwickau.addTestDeparture(2, new ID4Testing());
 		System.out.println("\n\n");
@@ -96,12 +91,11 @@ public class Client implements CommandLineRunner {
 						+ carFeatures.getConfigurationId());
 		System.out.println("\n");
 		electroCar = factoryZwickau.buildElectroCar();
-		System.out
-				.println("Electro Car with configuration ID"
-						+ electroCar.getEcltraFeatures()
-								.getConfigurationId()
-						+ " is tested: "
-						+ electroCar.getEcltraFeatures().isTested());
+		System.out.println("Electro Car with configuration ID"
+				+ electroCar.getElectroCarFeatures()
+						.getConfigurationId()
+				+ " is tested: "
+				+ electroCar.getElectroCarFeatures().isTested());
 
 		Timer.sleep(5);
 		System.out.println("\n\n");
@@ -113,9 +107,9 @@ public class Client implements CommandLineRunner {
 				.getElectroCarFEaturesID4Version1(Engine.engine1,
 						Color.silver, BatteryCapacity.kWh58,
 						Rim.model1, ExtraEquipment.package2);
-		factoryZwickau = ID4Factory.getID4Factory(
-				ID4Version1.getID4Version1(carFeatures));
-		
+		factoryZwickau = ID4Factory
+				.getID4Factory(new ID4Version1(carFeatures));
+
 		factoryZwickau.addTestDeparture(1, new ID3Testing());
 		factoryZwickau.addTestDeparture(2, new ID4Testing());
 		System.out.println("\n\n");
@@ -124,12 +118,11 @@ public class Client implements CommandLineRunner {
 						+ carFeatures.getConfigurationId());
 		System.out.println("\n");
 		electroCar = factoryZwickau.buildElectroCar();
-		System.out
-				.println("Electro Car with configuration ID"
-						+ electroCar.getEcltraFeatures()
-								.getConfigurationId()
-						+ " is tested: "
-						+ electroCar.getEcltraFeatures().isTested());
+		System.out.println("Electro Car with configuration ID"
+				+ electroCar.getElectroCarFeatures()
+						.getConfigurationId()
+				+ " is tested: "
+				+ electroCar.getElectroCarFeatures().isTested());
 
 		Timer.sleep(2);
 		System.out.println("\n\n");

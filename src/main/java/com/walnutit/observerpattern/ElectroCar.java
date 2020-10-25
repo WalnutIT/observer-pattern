@@ -22,8 +22,17 @@ import com.walnutit.observerpattern.domain.features.ElectroCarFeatures;
  *
  */
 public abstract class ElectroCar {
-	
+
+	protected ElectroCarFeatures electroCarFeatures;
+
+	public ElectroCar(ElectroCarFeatures electroCarFeatures) {
+		this.electroCarFeatures = electroCarFeatures;
+	}
+
+	public ElectroCarFeatures getElectroCarFeatures() {
+		return electroCarFeatures;
+	}
+
 	public abstract ElectroCar addToProduction();
-	public abstract ElectroCarFeatures getEcltraFeatures();
 
 }
