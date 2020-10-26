@@ -23,6 +23,8 @@ import com.walnutit.observerpattern.ElectroCar;
  */
 public interface TestDeparture {
 
-	public ElectroCar update(ElectroCar electroCar);
+	public void updateTestDeparture(ElectroCar electroCar);
+	public void startTesting();
+	public ElectroCar getTestedElectroCar();
 
 }

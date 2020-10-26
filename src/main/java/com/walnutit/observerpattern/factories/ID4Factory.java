@@ -42,7 +42,7 @@ public class ID4Factory extends FactoryZwickau {
 
 		ElectroCar untestedElectroCar = electroCar.addToProduction();
 
-		ElectroCar testedElectroCar = updateTestDeparture(
+		ElectroCar testedElectroCar = testElectroCar(
 				ID4Testing.TEST_DEPARTURE_KEY, untestedElectroCar);
 
 		return testedElectroCar;

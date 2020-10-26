@@ -125,7 +125,8 @@ public class Client implements CommandLineRunner {
 				+ electroCar.getElectroCarFeatures().isTested());
 
 		Timer.sleep(2);
-		System.out.println("\n\n");
+		System.out.println("\n\nDone!");
+		
 
 	}
 

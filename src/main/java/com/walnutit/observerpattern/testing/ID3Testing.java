@@ -26,20 +26,35 @@ public class ID3Testing implements TestDeparture {
 
 	public final static int TEST_DEPARTURE_KEY = 1;
 
-	@Override
-	public ElectroCar update(ElectroCar electroCar) {
+	private ElectroCar electroCar;
 
+	@Override
+	public void updateTestDeparture(ElectroCar electroCar) {
+
+		Timer.sleep(2);
 		System.out.println(
 				"TestingDeparture received electro car with configuration id: "
 						+ electroCar.getElectroCarFeatures()
 								.getConfigurationId());
+		this.electroCar = electroCar;
+		
+
+	}
+
+	@Override
+	public void startTesting() {
 		Timer.sleep(2);
 		System.out.println("... starting testing");
 		Timer.sleep(7);
 		System.out.println("... testing was successful");
 		electroCar.getElectroCarFeatures().setTested(true);
-		return electroCar;
+		Timer.sleep(2);
 
+	}
+
+	@Override
+	public ElectroCar getTestedElectroCar() {
+		return electroCar;
 	}
 
 }

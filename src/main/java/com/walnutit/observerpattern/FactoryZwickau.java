@@ -35,13 +35,11 @@ public abstract class FactoryZwickau {
 		testDepartures.remove(testDepartureKey);
 	}
 	
-	public ElectroCar updateTestDeparture(int testDepartureKey, ElectroCar electroCar) {
+	public ElectroCar testElectroCar(int testDepartureKey, ElectroCar electroCar) {
 		TestDeparture testDeparture = testDepartures.get(testDepartureKey);
-		return testDeparture.update(electroCar);
-	}
-
-	public ElectroCar startCarProductionProcess() {
-		return buildElectroCar();
+		testDeparture.updateTestDeparture(electroCar);
+		testDeparture.startTesting();
+		return testDeparture.getTestedElectroCar();
 	}
 
 	protected abstract ElectroCar buildElectroCar();

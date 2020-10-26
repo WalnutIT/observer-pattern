@@ -38,10 +38,12 @@ public class ID3Factory extends FactoryZwickau {
 
 		ElectroCar untestedElectroCar = electroCar.addToProduction();
 
-		ElectroCar testedElectroCar = updateTestDeparture(
+		ElectroCar testedElectroCar = testElectroCar(
 				ID3Testing.TEST_DEPARTURE_KEY, untestedElectroCar);
 
 		return testedElectroCar;
 	}
+	
+	
 
 }
