@@ -25,16 +25,8 @@ import com.walnutit.observerpattern.testing.ID4Testing;
  */
 public class ID4Factory extends FactoryZwickau {
 
-	ElectroCar electroCar;
-
-	public static ID4Factory getID4Factory(ElectroCar electroCar) {
-		return new ID4Factory(electroCar);
-	}
-
-	private ID4Factory(ElectroCar electroCar) {
-
-		this.electroCar = electroCar;
-
+	public ID4Factory(ElectroCar electroCar) {
+		super(electroCar);
 	}
 
 	@Override

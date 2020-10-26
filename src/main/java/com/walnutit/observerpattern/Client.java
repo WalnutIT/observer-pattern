@@ -107,8 +107,7 @@ public class Client implements CommandLineRunner {
 				.getElectroCarFEaturesID4Version1(Engine.engine1,
 						Color.silver, BatteryCapacity.kWh58,
 						Rim.model1, ExtraEquipment.package2);
-		factoryZwickau = ID4Factory
-				.getID4Factory(new ID4Version1(carFeatures));
+		factoryZwickau = new ID4Factory(new ID4Version1(carFeatures));
 
 		factoryZwickau.addTestDeparture(1, new ID3Testing());
 		factoryZwickau.addTestDeparture(2, new ID4Testing());
@@ -126,7 +125,6 @@ public class Client implements CommandLineRunner {
 
 		Timer.sleep(2);
 		System.out.println("\n\nDone!");
-		
 
 	}
 

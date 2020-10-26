@@ -27,24 +27,32 @@ public abstract class FactoryZwickau {
 
 	HashMap<Integer, TestDeparture> testDepartures = new HashMap<>();
 
-	public void addTestDeparture(int testDepartureKey, TestDeparture testDeparture) {
+	protected ElectroCar electroCar;
+
+	public FactoryZwickau(ElectroCar electroCar) {
+
+		this.electroCar = electroCar;
+
+	}
+
+	public void addTestDeparture(int testDepartureKey,
+			TestDeparture testDeparture) {
 		testDepartures.put(testDepartureKey, testDeparture);
 	}
 
 	public void removeTestDeparture(int testDepartureKey) {
 		testDepartures.remove(testDepartureKey);
 	}
-	
-	public ElectroCar testElectroCar(int testDepartureKey, ElectroCar electroCar) {
-		TestDeparture testDeparture = testDepartures.get(testDepartureKey);
+
+	public ElectroCar testElectroCar(int testDepartureKey,
+			ElectroCar electroCar) {
+		TestDeparture testDeparture = testDepartures
+				.get(testDepartureKey);
 		testDeparture.updateTestDeparture(electroCar);
 		testDeparture.startTesting();
 		return testDeparture.getTestedElectroCar();
 	}
 
 	protected abstract ElectroCar buildElectroCar();
-
-	
-
 
 }

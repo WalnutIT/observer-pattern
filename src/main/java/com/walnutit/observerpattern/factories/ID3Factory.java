@@ -25,12 +25,8 @@ import com.walnutit.observerpattern.testing.ID3Testing;
  */
 public class ID3Factory extends FactoryZwickau {
 
-	ElectroCar electroCar;
-
 	public ID3Factory(ElectroCar electroCar) {
-
-		this.electroCar = electroCar;
-
+		super(electroCar);
 	}
 
 	@Override
@@ -43,7 +39,5 @@ public class ID3Factory extends FactoryZwickau {
 
 		return testedElectroCar;
 	}
-	
-	
 
 }
